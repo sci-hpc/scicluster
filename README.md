@@ -2,7 +2,7 @@
 
 # SCI-HPC user documentation
 
-Served via http://hpc-uit.readthedocs.org.
+Served via https://sci-hpc.readthedocs.io.
 
 This document is based on [http://hpc.uit.no](https://github.com/uit-no/hpc-doc)
 
@@ -16,8 +16,8 @@ code examples are provided under the [MIT](https://opensource.org/licenses/MIT) 
 ## Locally building the HTML for testing
 
 ```
-git clone https://github.com/uit-no/hpc-doc.git
-cd hpc-doc
+git clone https://github.com/smhr/sci-hpc.git
+cd sci-hpc
 virtualenv venv
 source venv/bin/activate
 pip install sphinx

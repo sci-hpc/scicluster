@@ -8,7 +8,7 @@ About Sci-cluster-testing
 Resource description
 ====================
 
-Key numbers about the Stallo cluster: compute nodes, node interconnect,
+Key numbers about the Sci-cluster: compute nodes, node interconnect,
 operating system, and storage configuration.
 
 

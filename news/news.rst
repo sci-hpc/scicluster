@@ -15,7 +15,7 @@ System status and activity
 --------------------------
 
 You can get a quick overview of the system load on Sci-cluster-testing on the
-`ganglia page <https://www.sigma2.no/hardware/status>`_
+`ganglia page <172.21.99.202/ganglia>`_
 (only visible from within the Faculty).
 
 

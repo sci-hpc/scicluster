@@ -13,7 +13,6 @@ list of all its options by typing::
 
   module --help
 
-We use the lmod module system; for more info see https://lmod.readthedocs.io/en/latest/ on Stallo. Below we listed the most commonly used options, but also feel free to ivestigate options in this toolset more thoroughly on developers site.
 
 
 Which modules are currently loaded?

@@ -1,6 +1,6 @@
 
 
-Which software is installed on Stallo
+Which software is installed on Sci-cluster
 =====================================
 
 The easiest way to check which software and versions available is to use

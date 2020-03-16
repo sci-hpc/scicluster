@@ -42,7 +42,7 @@
 # You may not place any commands before the last SBATCH directive
 
 # Define and create a unique scratch directory for this job
-SCRATCH_DIRECTORY=/state/partition1/${USER}/${SLURM_JOBID}.stallo-adm.uit.no
+SCRATCH_DIRECTORY=/state/partition1/${USER}/${SLURM_JOBID}
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 

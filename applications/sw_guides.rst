@@ -12,3 +12,4 @@ the module system, and information about changes in application software see :re
    :titlesonly:
    
    astrophysics/GIZMO/GIZMO
+   math-stat/Mathematica

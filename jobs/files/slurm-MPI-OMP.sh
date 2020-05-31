@@ -19,6 +19,9 @@
 # this is a hard limit
 #SBATCH --mem-per-cpu=500MB
 
+# determine the partition
+#SBATCH --partition=PARA
+
 # turn on all mail notification
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=username@um.ac.ir
@@ -34,6 +37,10 @@
 SHARED_DIRECTORY=/home/work/${USER}/example/${SLURM_JOBID}
 mkdir -p ${SHARED_DIRECTORY}
 cd ${SHARED_DIRECTORY}
+
+# unload all modules then load your OMP modules
+ml purge
+ml rocks-openmpi
 
 # we set OMP_NUM_THREADS to the number cpu cores per MPI task
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}

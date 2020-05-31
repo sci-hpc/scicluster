@@ -19,6 +19,9 @@
 #              d-hh:mm:ss
 #SBATCH --time=0-00:05:00
 
+# determine the partition
+#SBATCH --partition=PARA
+
 # turn on all mail notification
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=username@um.ac.ir

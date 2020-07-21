@@ -7,7 +7,7 @@ Starting an interacitve job
 ---------------------------
 You can run an interactive job like this::
 
-  $ srun -p SHORT --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i
+  $ srun -p short --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i
 
 Here we ask for a single core on one interactive node for one hour with the
 default amount of memory. The command prompt will appear as soon as
@@ -25,12 +25,13 @@ Keeping interactive jobs alive
 Interactive jobs die when you disconnect from the frontend node either by choice or by
 internet connection problems.
 
-``interactive`` command
------------------------
-
-To ease running an interacitve job, we define a command wich you can find its help as ``interacitve -h``.
-As an example do::
-
-   $ interactive -c1 -w compute-0-0 -p SHORT
+.. 
+    ``interactive`` command
+    -----------------------
+..
+    To ease running an interacitve job, we define a command wich you can find its help as ``interacitve -h``.
+    As an example do::
+..
+    $ interactive -c1 -w compute-0-0 -p short
 
 

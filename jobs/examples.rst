@@ -12,7 +12,7 @@ Basic examples
 General blueprint for a jobscript
 ---------------------------------
 
-You can save the following example to a file (e.g. run.sh) on sci-cluster-testing. Comment
+You can save the following example to a file (e.g. run.sh) on scicluster. Comment
 the two ``cp`` commands that are just for illustratory purpose (lines 46 and 55)
 and change the SBATCH directives where applicable. You can then run the script
 by typing::
@@ -23,7 +23,10 @@ Please note that all values that you define with SBATCH directives are hard
 values. When you, for example, ask for 6000 MB of memory (``--mem=6000MB``) and
 your job uses more than that, the job will be automatically killed by the manager.
 
-Important: Please note that the standard out and err streams from the code are redirected to a file despite the specification of standard out and err for the job. This is very important unless stdout/stderr from your code is less than a few MB. The job output is spooled locally on the execution node and copied to the user working directory only after the job completes. Since the spool size is small (a few GB) you can overfill the disk and crash all the jobs on the node. With redirection approach you avoid this and in addition you can monitor out.txt during runtime.
+Important: Please note that the standard out and err streams from the code are redirected to a file despite the specification of standard out and err for the job.
+This is very important unless stdout/stderr from your code is less than a few MB.
+The job output is spooled locally on the execution node and copied to the user working directory only after the job completes.
+Since the spool size is small (a few GB) you can overfill the disk and crash all the jobs on the node. With redirection approach you avoid this and in addition you can monitor out.txt during runtime.
 
 
 .. literalinclude:: files/slurm-blueprint.sh
@@ -115,7 +118,7 @@ us a chance to perform clean-up actions.
 OpenMP and MPI
 ==============
 
-You can download the examples given here to a file (e.g. run.sh) and start it with:
+You can copy and paste the examples given here to a file (e.g. run.sh) and start it with:
 
 .. code-block:: bash
 
@@ -148,6 +151,12 @@ use ``--ntasks-per-node`` in combination with ``--nodes``:
 
 .. code-block:: bash
 
-   #SBATCH --nodes=4 --ntasks-per-node=2 --cpus-per-task=8
+   #SBATCH --nodes=2 --ntasks-per-node=2 --cpus-per-task=8
 
-This will start 2 MPI tasks each on 4 nodes, where each task can use up to 8 threads.
+This will start 2 MPI tasks each on 2 nodes, where each task can use up to 8 threads.
+
+Example for a GPU job
+-----------------------------------
+
+.. literalinclude:: files/slurm-gpu.sh
+   :language: bash

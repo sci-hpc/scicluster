@@ -18,15 +18,15 @@ completed, you can get additional information that was not available during
 the run. This includes run time, memory used, etc.
 
 From our monitoring tool Ganglia, you can watch live status information
-on Sci-cluster-testing:
+on Scicluster:
 
-*  `Load situation <172.21.99.202/ganglia/>`_
+*  `Load situation <172.21.99.53/ganglia/>`_
 
 
 CPU load and memory consumption of your job
 -------------------------------------------
 
-Sci-cluster-testing has only limited resources and usually a high demand.
+Scicluster has only limited resources and usually a high demand.
 Therefore using the available resources as efficient as possible is paramount to have short queueing times
 and getting most out of your quota.
 
@@ -52,7 +52,7 @@ if you have one job in the Idle queue, that is not very important to you, and
 it is blocking other, more urgent, jobs from starting, you might want to put
 that one job on hold. Jobs on hold will not start until the hold is released.
 *Deferred* jobs will not start. In most cases, the job is deferred because it
-is asking for a combination of resources that Sci-cluster-testing can not provide.
+is asking for a combination of resources that Scicluster can not provide.
 
 Please contact the support staff, if you don't understand why your job has a
 hold or deferred state.

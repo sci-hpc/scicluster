@@ -19,8 +19,8 @@
 #              d-hh:mm:ss
 #SBATCH --time=0-00:05:00
 
-# Define the partition on which the job shall run.
-#SBATCH --partition LONG
+# Define the partition on which the job shall run, e.g. long
+#SBATCH --partition long
 
 # How much memory you need.
 # --mem will define memory per node and
@@ -28,43 +28,32 @@
 #SBATCH --mem-per-cpu=1500MB
 ##SBATCH --mem=5GB    # this one is not in effect, due to the double hash
 
-# Turn on mail notification. There are many possible self-explaining values:
-# NONE, BEGIN, END, FAIL, ALL (including all aforementioned)
-# For more values, check "man sbatch"
-#SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=username@um.ac.ir
-
-# stdout
-#SBATCH --output="stdout.txt"
-# stderr
-#SBATCH --error="stderr.txt"
+#SBATCH --output="stdout.txt" # standard output
+#SBATCH --error="stderr.txt"  # standard error <-- This is our last SBATCH directive
 
 # You may not place any commands before the last SBATCH directive
 
 # Define and create a unique scratch directory for this job
-SCRATCH_DIRECTORY=/state/partition1/${USER}/${SLURM_JOBID}
+SCRATCH_DIRECTORY=/scratch1/${USER}/${SLURM_JOBID}
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 
 # You can copy everything you need to the scratch directory
 # ${SLURM_SUBMIT_DIR} points to the path where this script was submitted from
-cp ${SLURM_SUBMIT_DIR}/myfiles*.txt ${SCRATCH_DIRECTORY}
+cp ${SLURM_SUBMIT_DIR}/myfile.txt ${SCRATCH_DIRECTORY}
 
-# This is where the actual work is done. In this case, the script only waits.
-# The time command is optional, but it may give you a hint on how long the
-# command worked
-time sleep 10
-#sleep 10
+ml purge # it's a good practice to first unload all modules
+ml your_modules # then load what module you need, if any
+
+# This is where the actual work is done.
+./my_code >& out.txt
 
 # After the job is done we copy our output back to $SLURM_SUBMIT_DIR
 cp ${SCRATCH_DIRECTORY}/my_output ${SLURM_SUBMIT_DIR}
 
-# In addition to the copied files, you will also find a file called
-# slurm-1234.out in the submit directory. This file will contain all output that
-# was produced during runtime, i.e. stdout and stderr.
 
-# After everything is saved to the home directory, delete the work directory to
-# save space on /state/partition1
+# After everything is saved to your home directory, it's recommended to delete the work directory to
+# save space on /scratch1
 cd ${SLURM_SUBMIT_DIR}
 rm -rf ${SCRATCH_DIRECTORY}
 

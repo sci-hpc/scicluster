@@ -9,7 +9,7 @@
 # we ask for 2 MPI tasks with 4 cores each
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=2
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=32
 
 # run for five minutes
 #              d-hh:mm:ss
@@ -20,27 +20,21 @@
 #SBATCH --mem-per-cpu=500MB
 
 # determine the partition
-#SBATCH --partition=PARA
+#SBATCH --partition=para
 
-# turn on all mail notification
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=username@um.ac.ir
-
-# stdout
 #SBATCH --output="stdout.txt"
-# stderr
 #SBATCH --error="stderr.txt"
 
 # you may not place bash commands before the last SBATCH directive
 
 # define and create a unique shared directory
-SHARED_DIRECTORY=/home/work/${USER}/example/${SLURM_JOBID}
+SHARED_DIRECTORY=/work8/${USER}/${SLURM_JOBID} # please note it's vital to use /work8 for shared drectory
 mkdir -p ${SHARED_DIRECTORY}
 cd ${SHARED_DIRECTORY}
 
 # unload all modules then load your OMP modules
 ml purge
-ml rocks-openmpi
+ml OpenMPI
 
 # we set OMP_NUM_THREADS to the number cpu cores per MPI task
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}

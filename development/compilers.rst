@@ -3,16 +3,19 @@
 Compilers
 =========
 
-The default development environment on Sci-cluster-testing is provided by GNU Compiler Collection. The GNU foundation maintains a number of high quality compilers, including a compiler for C (gcc), C++ (g++), and Fortran (gfortran). The gcc compiler is the foundation underneath all three, and the term "gcc" often means the suite of these three GNU compilers.
+The default development environment on Scicluster is provided by GNU Compiler Collection. The GNU foundation maintains a number of high quality compilers, including a compiler for C (gcc), C++ (g++), and Fortran (gfortran). The gcc compiler is the foundation underneath all three, and the term "gcc" often means the suite of these three GNU compilers.
 
 Version
 -------
 
-Currently we provide two version. The default version is ``4.8.5 (Red Hat 4.8.5-16)``. We also provide version ``7.3.1 (Red Hat 7.3.1-5)`` via devtoolset-7. To enable this version, run::
+Currently we provide two version. The default version is ``GCC-4.8.5 (Red Hat 4.8.5-16)``. 
+We also provide version ``GCC-7.3.0-2.30`` via module system. To enable this version, run
 
-   scl enable devtoolset-7 bash
+   ml GCCcore/7.3.0
    
-To disable, exit from your bash session ``(ctrl+d)``.
+To disable,
+
+   ml unload GCCcore/7.3.0.
 
 
 Fortran compilers

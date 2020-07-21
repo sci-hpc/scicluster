@@ -1,6 +1,6 @@
 
 
-Which software is installed on Sci-cluster
+Which software is installed on Scicluster
 =====================================
 
 The easiest way to check which software and versions available is to use

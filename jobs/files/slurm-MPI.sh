@@ -6,10 +6,10 @@
 
 #SBATCH --job-name=example
 
-# 12 MPI tasks in total
-# sci-cluster-testing has 4 cores/node and therefore we take
+# 32 MPI tasks in total
+# Scicluster has 4 nodes and therefore we take
 # a number that is divisible by both
-#SBATCH --ntasks=12
+#SBATCH --ntasks=32
 
 # run for five minutes
 #              d-hh:mm:ss
@@ -20,27 +20,21 @@
 #SBATCH --mem-per-cpu=500MB
 
 # determine the partition
-#SBATCH --partition=PARA
+#SBATCH --partition=para
 
-# turn on all mail notification
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=username@um.ac.ir
-
-# stdout
 #SBATCH --output="stdout.txt"
-# stderr
 #SBATCH --error="stderr.txt"
 
 # you may not place bash commands before the last SBATCH directive
 
 # define and create a unique shared directory
-SHARED_DIRECTORY=/home/work/${USER}/example/${SLURM_JOBID}
+SHARED_DIRECTORY=/work8/${USER}/${SLURM_JOBID} # please note it's vital to use /work8 for shared drectory
 mkdir -p ${SHARED_DIRECTORY}
 cd ${SHARED_DIRECTORY}
 
 # unload all modules then load your OMP modules
 ml purge
-ml rocks-openmpi
+ml OpenMPI
 
 # we execute the job and time it
 time mpirun -np $SLURM_NTASKS ./my_binary.x &> my_output

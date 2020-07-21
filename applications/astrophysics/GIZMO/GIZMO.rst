@@ -1,8 +1,8 @@
 .. _GIZMO:
 
-======================================
+====================================================================
 GIZMO, a flexible, massively-parallel, multi-physics simulation code
-======================================
+====================================================================
 
 
 General Information
@@ -23,12 +23,12 @@ GIZMO lets you solve the fluid equations using a variety of different methods --
 Online info
 -----------------------
 
-* Homepage: http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html
-* Documentation: http://www.tapir.caltech.edu/~phopkins/Site/GIZMO_files/gizmo_documentation.html
+* `Homepage <http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html>`_ 
+* `Documentation <http://www.tapir.caltech.edu/~phopkins/Site/GIZMO_files/gizmo_documentation.html>`_
 
 
-GIZMO on Sci-cluster-testing:
-==============================================
+GIZMO on Scicluster:
+====================
 
 Usage
 -----

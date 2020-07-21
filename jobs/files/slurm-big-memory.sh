@@ -13,25 +13,24 @@
 #              d-hh:mm:ss
 #SBATCH --time=0-00:05:00
 
+# determine the partition, e.g. long
+#SBATCH --partition=long 
+
 # total memory for this job
 # this is a hard limit
 # note that if you ask for more than one CPU has, your account gets
 # charged for the other (idle) CPUs as well
 #SBATCH --mem=16000MB
 
-# turn on all mail notification
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=username@um.ac.ir
-
-# stdout
 #SBATCH --output="stdout.txt"
-# stderr
 #SBATCH --error="stderr.txt"
 
 # you may not place bash commands before the last SBATCH directive
 
-# define and create a unique scratch directory
-SCRATCH_DIRECTORY=/state/partition1/${USER}/example/${SLURM_JOBID}
+ml purge # it's a good practice to first unload all modules
+ml your_modules # then load what module you need, if any
+
+SCRATCH_DIRECTORY=/scratch1/${USER}/example/${SLURM_JOBID}
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 

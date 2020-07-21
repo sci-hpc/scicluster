@@ -20,21 +20,18 @@
 #SBATCH --time=0-00:05:00
 
 # determine the partition
-#SBATCH --partition=PARA
+#SBATCH --partition=para
 
-# turn on all mail notification
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=username@um.ac.ir
-
-# stdout
 #SBATCH --output="stdout.txt"
-# stderr
 #SBATCH --error="stderr.txt"
 
 # you may not place bash commands before the last SBATCH directive
 
+ml purge # it's a good practice to first unload all modules
+ml your_modules # then load what module you need, if any
+
 # define and create a unique scratch directory
-SCRATCH_DIRECTORY=/state/partition1/${USER}/example/${SLURM_JOBID}
+SCRATCH_DIRECTORY=/scratch1/${USER}/example/${SLURM_JOBID}
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 

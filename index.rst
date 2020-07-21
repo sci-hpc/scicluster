@@ -1,6 +1,6 @@
 
 ===================================
-SCI-HPC Services User Documentation
+Scicluster User guide
 ===================================
 
 
@@ -8,7 +8,7 @@ SCI-HPC Services User Documentation
 
 
 
-:ref:`SCI-CLUSTER <about_sci-cluster-testing>` is the local computer cluster of Faculty of Science of Ferdowsi University of Mashhad. If you are new here, you might want to learn the basics first here:
+:ref:`Scicluster <about_scicluster>` is the local computer cluster of Faculty of Science of Ferdowsi University of Mashhad. If you are new here, you might want to learn the basics first here:
 
 
 .. toctree::
@@ -32,8 +32,8 @@ SCI-HPC Services User Documentation
 
 .. General sci-cluster sections
 .. toctree::
-   :maxdepth: 1
-   :caption: Sci-cluster-testing
+   :maxdepth: 2
+   :caption: Scicluster
 
    sci-cluster/sci-cluster
 ..   sci-cluster/um-guidelines
@@ -54,15 +54,15 @@ SCI-HPC Services User Documentation
 
    jobs/dos_and_donts
    jobs/batch
-   
+
 .. toctree::
    :maxdepth: 2
 
-   jobs/slurm_parameter   
+   jobs/slurm_parameter
 
 .. toctree::
    :maxdepth: 1
-   
+
    jobs/examples
    jobs/interactive
    jobs/job_management
@@ -105,4 +105,5 @@ SCI-HPC Services User Documentation
 
    development/compilers
    development/environment
-
+   development/toolchains_easybuild
+   development/build_softwares

@@ -3,11 +3,11 @@
 Batch system
 ============
 
-The Sci-cluster-testing system is a resource that is shared between many of users and to
+The Scicluster system is a resource that is shared between many of users and to
 ensure fair use everyone must do their computations by submitting jobs through
 a batch system that will execute the applications on the available resources.
 
-The batch system on Sci-cluster-testing is `SLURM <https://slurm.schedmd.com/>`_ (Simple
+The batch system on Scicluster is `SLURM <https://slurm.schedmd.com/>`_ (Simple
 Linux Utility for Resource Management.)
 
 
@@ -15,7 +15,7 @@ Creating a job script
 ---------------------
 
 To run a job on the system you need to create a job script. A job script is a
-regular shell script (bash) with some directives specifying the number of CPUs,
+regular shell script (bash) with some directives started by ``#SBATCH`` specifying the number of CPUs,
 memory, etc., that will be interpreted by the batch system upon submission.
 
 You can find job script examples in :ref:`job_script_examples`.
@@ -38,7 +38,7 @@ In SLURM you can do this::
 
   $ sbatch myscript.sh myinput myoutput
 
-And then you can pick the parameters up inside the job script::
+And then you can pick the parameters up inside the job script using ``${n}`` where ``n`` is the nth parameter::
 
   #!/bin/bash
 
@@ -58,7 +58,7 @@ Priority
 
 We recommend you to be as precise as you can when specifying the
 parameters as they will inflict on how fast your jobs will start to run.
-We generally use fairshare for prioritizing jobs. 
+We generally use fairshare for prioritizing jobs.
 This means that users with many jobs running will get a
 decreased priority compared to other users.
 

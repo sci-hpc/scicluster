@@ -3,7 +3,7 @@
 SLURM Workload Manager
 =======================
 
-SLURM is the workload manager and job scheduler used for Sci-cluster-testing.
+`SLURM <https://slurm.schedmd.com/>`_ is the workload manager and job scheduler used for Scicluster.
 
 There are two ways of starting jobs with SLURM; either interactively with ``srun``
 or as a script with ``sbatch``.
@@ -19,9 +19,9 @@ See :ref:`interactive` for more details.
 SLURM Parameter
 -----------------
 
-SLURM supports a multitude of different parameters.
-This enables you to effectivly tailor your script to your need when using Sci-cluster-testing
-but also means that is easy to get lost and waste your time and quota.
+`SLURM <https://slurm.schedmd.com/>`_ supports a multitude of different parameters.
+This enables you to effectivly tailor your script to your need when using Scicluster
+but also means that it is easy to be confused and waste your time and quota.
 
 The following parameters can be used as command line parameters with ``sbatch`` and
 ``srun`` or in jobscript, see :ref:`job_script_examples`.
@@ -32,55 +32,56 @@ Replace <....> with the value you want, e.g. ``--job-name=test-job``.
 Basic settings:
 +++++++++++++++
 
-=============================    ===============================================================================
-Parameter                        Function
-=============================    ===============================================================================
---job-name=<name>                Job name to be displayed by for example ``squeue``
---output=<path>                  | Path to the file where the job (error) output is written to 
---mail-type=<type>               | Turn on mail notification; type can be one of BEGIN, END, FAIL, REQUEUE or ALL
---mail-user=<email_address>      Email address to send notifications to
-=============================    ===============================================================================
+=======================================  ================================================================================
+Parameter                                 Function
+=======================================  ================================================================================
+``--job-name=<name>`` or ``-J <name>``    Job name to be displayed by for example ``squeue`` command
+``--output=<path>`` or ``-o <name>``      Path to the file where the job  output is written to
+``--error=<path>`` or ``-e <name>``       Path to the file where the job  error is written to
+``--mail-type=<type>``                    Turn on mail notification; type can be one of BEGIN, END, FAIL, REQUEUE or ALL
+``--mail-user=<email_address>``           Email address to send notifications to
+=======================================  ================================================================================
 
 
 Requesting Resources
 +++++++++++++++++++++
 
-=============================   ============================================================================================================================
-Parameter                       Function
-=============================   ============================================================================================================================
---time=<d-hh:mm:ss>             Time limit for job. Job will be killed by SLURM after time has run out. Format days-hours:minutes:seconds
---nodes=<num_nodes>             Number of nodes. Multiple nodes are only useful for jobs with distributed-memory (e.g. MPI).
---mem=<MB>                      Memory (RAM) per node. Number followed by unit prefix, e.g. 16G
---mem-per-cpu=<MB>              Memory (RAM) per requested CPU core
---ntasks-per-node=<num_procs>   Number of (MPI) processes per node. More than one useful only for MPI jobs. Maximum number is node dependent (number of cores)
---cpus-per-task=<num_threads>   CPU cores per task. For MPI use one. For parallelized applications benchmark this is the number of threads.
---exclusive                     Job will not share nodes with other running jobs. You will be charged for the complete nodes even if you asked for less.
-=============================   ============================================================================================================================
+=============================================    ==============================================================================================================================
+Parameter                                        Function
+=============================================    ==============================================================================================================================
+``--time=<d-hh:mm:ss>``                          Time limit for job. Job will be killed by SLURM after time has run out. Format days-hours:minutes:seconds
+``--nodes=<num_nodes>`` or ``-N=<num_nodes>``    Number of nodes. Multiple nodes are only useful for jobs with distributed-memory (e.g. MPI).
+``--mem=<MB>``                                   Memory (RAM) per node. Number followed by unit prefix, e.g. 16G
+``--mem-per-cpu=<MB>``                           Memory (RAM) per requested CPU core
+``--ntasks-per-node=<num_procs>``                Number of (MPI) processes per node. More than one useful only for MPI jobs. Maximum number is node dependent (number of cores)
+``--cpus-per-task=<num_threads>``                CPU cores per task. For MPI use one. For parallelized applications benchmark this is the number of threads.
+``--exclusive``                                  Job will not share nodes with other running jobs. You will be charged for the complete nodes even if you asked for less.
+=============================================    ==============================================================================================================================
 
 
 Accounting
 +++++++++++++++++++++
 See also :ref:`label_partitions`.
 
-==================      ==========================================================================================================
-Parameter               Function
-==================      ==========================================================================================================
---account=<name>        Project (not user) account the job should be charged to.
---partition=<name>      Partition/queue in which o run the job. 
---qos=<...>             Is not functional yet.
-==================      ==========================================================================================================
+================================      ==========================================================================================================
+Parameter                             Function
+================================      ==========================================================================================================
+``--account=<name>``                  Project (not user) account the job should be charged to.
+``--partition=<name>`` or ``-p``      Partition/queue in which o run the job.
+``--qos=<...>``                       Is not functional yet.
+================================      ==========================================================================================================
 
 
 Advanced Job Control
 +++++++++++++++++++++
 
-==========================   ==================================================================================================================================================================
-Parameter                    Function
-==========================   ==================================================================================================================================================================
---array=<indexes>            Submit a collection of similar jobs, e.g. ``--array=1-10``. (sbatch command only). See official `SLURM documentation <https://slurm.schedmd.com/job_array.html>`_
---dependency=<state:jobid>   Wait with the start of the job until specified dependencies have been satified. E.g. --dependency=afterok:123456
---ntasks-per-core=2             Enables hyperthreading. Only useful in special circumstances.
-==========================   ==================================================================================================================================================================
+==============================   ==================================================================================================================================================================
+Parameter                        Function
+==============================   ==================================================================================================================================================================
+``--array=<indexes>``            Submit a collection of similar jobs, e.g. ``--array=1-10``. (sbatch command only). See official `SLURM documentation <https://slurm.schedmd.com/job_array.html>`_
+``--dependency=<state:jobid>``   Wait with the start of the job until specified dependencies have been satified. E.g. --dependency=afterok:123456
+``--ntasks-per-core=2``          Enables hyperthreading. Only useful in special circumstances.
+==============================   ==================================================================================================================================================================
 
 
 Differences between CPUs and tasks
@@ -88,18 +89,18 @@ Differences between CPUs and tasks
 
 As a new users writing your first SLURM job script the difference between
 ``--ntasks`` and ``--cpus-per-task`` is typically quite confusing.
-Assuming you want to run your program on a single node with  16 cores, which 
+Assuming you want to run your program on a single node with  16 cores, which
 SLURM parameters should you specify?
 
 The answer is it depends whether your application supports MPI.
-MPI (message passing protocol) is a communication interface used for developing 
+MPI (message passing protocol) is a communication interface used for developing
 parallel computing programs on distributed memory systems.
 This is necessary for applications running on multiple computers (nodes) to be able to
 share (intermediate) results.
 
 To decide which set of parameters you should use, check if your application utilizes
 MPI and therefore would benefit from running on multiple nodes simultaneously.
-On the other hand you have an non-MPI enables application or made a mistake in 
+On the other hand you have an non-MPI enables application or made a mistake in
 your setup, it doesn't make sense to request more than one node.
 
 
@@ -122,9 +123,9 @@ more than one CPU core.
 =============================   ============================================================================================================================
 Parameter                       Function
 =============================   ============================================================================================================================
---nodes=1                       Start a unparallized job on only one node
---ntasks-per-node=1             For OpenMP, only one task is necessary
---mem=<MB>                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G
+``--nodes=1``                       Start a unparallized job on only one node
+``--ntasks-per-node=1``             For OpenMP, only one task is necessary
+``--mem=<MB>``                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G
 =============================   ============================================================================================================================
 
 If you are unsure if your application can benefit from more cores try a higher number and
@@ -134,17 +135,17 @@ observe the load of your job. If it stays at approximately one there is no need 
 OpenMP applications
 ^^^^^^^^^^^^^^^^^^^
 OpenMP (Open Multi-Processing) is a multiprocessing library is often used for programs on
-shared memory systems. Shared memory describes systems which share the memory between all 
+shared memory systems. Shared memory describes systems which share the memory between all
 processing units (CPU cores), so that each process can access all data on that system.
 
-=============================   ============================================================================================================================
-Parameter                       Function
-=============================   ============================================================================================================================
---nodes=1                       Start a parallel job for a shared memory system on only one node
---ntasks-per-node=1             For OpenMP, only one task is necessary
---cpus-per-task=<num_threads>   Number of threads (CPU cores) to use
---mem=<MB>                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G
-=============================   ============================================================================================================================
+=================================   ============================================================================================================================
+Parameter                            Function
+=================================   ============================================================================================================================
+``--nodes=1``                       Start a parallel job for a shared memory system on only one node
+``--ntasks-per-node=1``             For OpenMP, only one task is necessary
+``--cpus-per-task=<num_threads>``   Number of threads (CPU cores) to use
+``--mem=<MB>``                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G
+=================================   ============================================================================================================================
 
 
 Multiple node jobs (MPI)
@@ -154,14 +155,16 @@ For MPI applications.
 
 Depending on the frequency and bandwidth demand of your setup, you can either just start a number of MPI tasks or request whole nodes.
 While using whole nodes guarantees a lower latency and higher bandwidth it usually results in a longer queuing time compared to cluster wide job.
-With the latter the SLURM manager can distribute your task across all nodes of sci-cluster-testing and utilize otherwise unused cores on nodes which for example run a 6 core job on a 8 core node. This usually results in shorter queuing times but slower inter-process connection speeds.
+With the latter the SLURM manager can distribute your task across all nodes of Scicluster and
+utilize otherwise unused cores on nodes which for example run a 6 core job on a 8 core node.
+This usually results in shorter queuing times but slower inter-process connection speeds.
 
-.. To be modified for sci-cluster
+.. To be modified for scicluster
 
 .. We strongly advice all users to ask for a given set of cores when submitting
 .. multi-core jobs.  To make sure that you utilize full nodes, you should ask for
 .. sets that adds up to both 16 and 20 (80, 160 etc) due to the hardware specifics
-.. of Sci-cluster-testing i.e. submit the job with ``--ntasks=80`` **if** your application
+.. of Scicluster i.e. submit the job with ``--ntasks=80`` **if** your application
 .. scales to this number of tasks.
 
 .. This will make the best use of the resources and give the most predictable
@@ -174,14 +177,14 @@ With the latter the SLURM manager can distribute your task across all nodes of s
 To use whole nodes
 ^^^^^^^^^^^^^^^^^^
 
-=============================   =============================================================================================================================
-Parameter                       Function
-=============================   =============================================================================================================================
---nodes=<num_nodes>             Start a parallel job for a distributed memory system on several nodes
---ntasks-per-node=<num_procs>   Number of (MPI) processes per node. Maximum number depends on node type
---cpus-per-task=1               Use one CPU core per task. 
---exclusive                     Job will not share nodes with other running jobs. You don't need to specify memory as you will get all available on the node.
-=============================   =============================================================================================================================
+=================================   =============================================================================================================================
+Parameter                           Function
+=================================   =============================================================================================================================
+``--nodes=<num_nodes>``             Start a parallel job for a distributed memory system on several nodes
+``--ntasks-per-node=<num_procs>``   Number of (MPI) processes per node. Maximum number depends on node type
+``--cpus-per-task=1``               Use one CPU core per task.
+``--exclusive``                     Job will not share nodes with other running jobs. You don't need to specify memory as you will get all available on the node.
+=================================   =============================================================================================================================
 
 
 Cluster wide
@@ -190,8 +193,8 @@ Cluster wide
 =============================   ============================================================================================================================
 Parameter                       Function
 =============================   ============================================================================================================================
---ntasks=<num_procs>            Number of (MPI) processes in total. Equals to the number of cores
---mem-per-cpu=<MB>              Memory (RAM) per requested CPU core. Number followed by unit prefix, e.g. 1G
+``--ntasks=<num_procs>``            Number of (MPI) processes in total. Equals to the number of cores
+``--mem-per-cpu=<MB>``              Memory (RAM) per requested CPU core. Number followed by unit prefix, e.g. 1G
 =============================   ============================================================================================================================
 
 
@@ -204,7 +207,7 @@ more cpus for a job than you really can utilize efficiently. Try to run your
 job on 1, 2, 4, 8, 16, etc., cores to see when the runtime for your job starts
 tailing off. When you start to see less than 30% improvement in runtime when
 doubling the cpu-counts you should probably not go any further. Recommendations
-to a few of the most used applications can be found in :ref:`sw_guides`. 
+to a few of the most used applications can be found in :ref:`sw_guides`.
 
 
 Job related environment variables
@@ -249,20 +252,20 @@ be covered by both ``--partition=...`` and ``--qos=...``.
 
 We have the following partitions:
 
-+-----------+---------+-------------+--------------+-----------------+
-| Partition | MaxTime | DefaultTime | DefMemPerCPU |  Nodes          |
-+-----------+---------+-------------+--------------+-----------------+
-| SHORT     | 1 Day   | 30 min      | 512 MB       | compute-0-0     |
-+-----------+---------+-------------+--------------+-----------------+
-| LONG      | 1 week  | 30 min      | 512          | compute-0-[0-3] |
-+-----------+---------+-------------+--------------+-----------------+
-| PARA      | 1 Day   | 30 min      | 512          | compute-0-[0-3] |
-+-----------+---------+-------------+--------------+-----------------+
++-----------+---------+-------------+--------------+----------------------+
+| Partition | MaxTime | DefaultTime | DefMemPerCPU | Max number of  Nodes |
++===========+=========+=============+==============+======================+
+| short     | 1 day   | 30 min      | 512 MB       | 1                    |
++-----------+---------+-------------+--------------+----------------------+
+| long      | 1 week  | 30 min      | 512 MB       | 1                    |
++-----------+---------+-------------+--------------+----------------------+
+| PARA      | 1 week  | 30 min      | 512 MB       | 4                    |
++-----------+---------+-------------+--------------+----------------------+
 
 To display a straight-forward summary: available partitions, their job size, status, timelimit and node information with A/I/O/T (allocated, idle, other, and total)::
 
   $ sinfo -o "%.10P %.15s %.10a %.10l %.15F"
-  
+
 Numbers represent field length and should be used to properly accommodate the data.
 
-See :ref:`about_sci-cluster-testing` chapter of the documentation if you need more information on the system architecture.
+See :ref:`about_Scicluster` chapter of the documentation if you need more information on the system architecture.

@@ -44,14 +44,34 @@ To use all Anaconda pre-installed packages (base environment), we can run in an 
   ml purge # ml here means module load
   ml Anaconda3
   source /home/modules/software/Anaconda3/2020.02/etc/profile.d/conda.sh
+  conda activate base
 
-This should activate the base environment. We can add the above commands also in our job scripts. For example if we want to run jupyter notebook in a node for data analyzing, we can submit a job as
+This should activate the base environment.
+
+But it's recommended to create a separate environment for each of your projects (please note that anaconda might not be accessible directly in Iran and the following command might not work). So instead of the last command, you can do
+
+.. code-block:: bash
+
+  conda create --name myproject python=3.7
+
+If you see the following, you forgot `--name` (a common mistake!): `CondaValueError: The target prefix is the base prefix. Aborting.`. Then you can activate it 
+
+.. code-block:: bash
+
+  conda activate myproject
+
+and install the needed packages
+
+.. code-block:: bash
+
+  
+We can add the above commands also in our job scripts. For example if we want to run jupyter notebook in a node for data analyzing, we can submit a job as
 
 .. code-block:: bash
 
     #!/bin/bash
     #SBATCH -J jupyter
-    #SBATCH --partition LONG
+    #SBATCH --partition long
     #SBATCH --nodes=1
     #SBATCH --ntasks=1
     #SBATCH --nodelist=compute-0-1

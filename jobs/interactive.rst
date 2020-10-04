@@ -1,6 +1,6 @@
 .. _interactive:
 
-Interactive jobs
+Interactive job
 ================
 
 Starting an interacitve job

@@ -15,8 +15,8 @@ If you are associated with the Faculty of Science, Ferdowsi University of Mashha
 Connect to Scicluster
 -----------------
 
-You may connect to Scicluster via *SSH* to ``172.21.99.53``.
-This means that on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@172.21.99.53``.
+You may connect to Scicluster via *SSH* to ``172.21.127.53``.
+This means that on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@172.21.127.53``.
 From Windows, you may connect via PuTTY software. X-forwarding for graphical applications is not possible currently.
 Please see the following link for details to all mentioned methods. :doc:`/account/login`
 

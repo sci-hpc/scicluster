@@ -21,7 +21,7 @@ or
 
 ::
 
- ssh <username>@172.21.99.53
+ ssh <username>@172.21.127.53
 
 into a terminal window.
 
@@ -29,7 +29,7 @@ If you need X-forwarding (for instance, if you like to run Emacs in it's own win
 
 ::
 
- ssh -X -Y <username>@172.21.99.53
+ ssh -X -Y <username>@172.21.127.53
 
 
 

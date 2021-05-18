@@ -68,7 +68,7 @@ Parameter                             Function
 ================================      ==========================================================================================================
 ``--account=<name>``                  Project (not user) account the job should be charged to.
 ``--partition=<name>`` or ``-p``      Partition/queue in which o run the job.
-``--qos=<...>``                       Is not functional yet.
+``--qos=<...>``                       low, normal or high
 ================================      ==========================================================================================================
 
 
@@ -243,7 +243,7 @@ Task count::
 
 .. _label_partitions:
 
-Partitions (queues) and services
+Partitions (queues)
 --------------------------------
 
 SLURM differs slightly from the previous Torque system with respect to
@@ -269,3 +269,50 @@ To display a straight-forward summary: available partitions, their job size, sta
 Numbers represent field length and should be used to properly accommodate the data.
 
 See :ref:`about_Scicluster` chapter of the documentation if you need more information on the system architecture.
+
+
+
+.. _label_qos:
+
+Quality of servisec (QOS)
+--------------------------------
+
+We have also defined three QOSs (quality of service) for better management: low, normal and high.
+
++--------+-----------------------------+---------------+
+|   QOS  |      Max node per user      | Max wall time |
++--------+-----------------------------+---------------+
+|   low  | 1 (this is the default QOS) |       7       |
++--------+-----------------------------+---------------+
+| normal |              2              |       1       |
++--------+-----------------------------+---------------+
+|  high  |              3              |       1       |
++--------+-----------------------------+---------------+
+
+All members of the faculty of science have low and normal QOS which means they can use 
+1 node for 7 days or 2 nodes for 1 day. Currently just for testing, all the members have also highQOS i.e.
+they can use 3 nodes for 1 day. After about one month, this QOS will be assigned only to those of users
+that report reasonable performance using 3 nodes. 
+
+.. code-block:: bash
+
+   ## for 3 nodes
+   #SBATCH --qos=high
+   #SBATCH --ntasks=80
+   #SBATCH -w compute-0-[0,2,3]
+   #SBATCH --time=1-00:00:00 # maximum time for "high" QOS is 1 day
+
+   ## for 2 nodes (e.g. compute-0-0 and 0-3)
+   #SBATCH --qos=normal
+   #SBATCH --ntasks=56 ## 
+   #SBATCH -w compute-0-[0,3] 
+   #SBATCH --time=1-00:00:00 # maximum time for "normal" QOS is 1 day
+
+   ## for 1 node (e.g. compute-0-1)
+   #SBATCH --qos=low ## this is default, so you can ignore it
+   #SBATCH --ntasks=16 ## 
+   #SBATCH -w compute-0-1
+   #SBATCH --time=7-00:00:00 # maximum time for "low" QOS is 7 days
+
+Please note that currently compute-0-1 has NOT equipped with 10 G adapter, so for distributed MPI parallel jobs,
+you can not use it.

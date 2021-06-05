@@ -48,8 +48,10 @@ operating system, and storage configuration.
 +---------------------+------------------+------------------------+----------+----------+-------------+
 | compute-0-2         | 2 x Xeon E5-2690 | Haswell (2013)         | 24       | 256      | DL380-Gen9  |
 +---------------------+------------------+------------------------+----------+----------+-------------+
-| compute-0-3         | 2 x Xeon E5-2695 | Broadwell (2014)       | 36       | 64       | DL380-Gen9  |
+|                     | 2 x Xeon E5-2695 | Broadwell (2014)       | 36       | 64       |             |
++ compute-0-3         +                  +                        +          +          + DL380-Gen9  +
+|                     | Tesla K80        | Kepler (2014)          | 4992     | 24       |             |
 +---------------------+------------------+------------------------+----------+----------+-------------+
 
 
-Currently all nodes in the cluster are connected with a 1 Gb ethernet network.
+Currently all nodes in the cluster are connected with a 1 Gb ethernet network as well as a 10 Gb low latency one for message passing.

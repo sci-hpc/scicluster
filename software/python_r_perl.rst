@@ -1,7 +1,7 @@
 .. _python_r_perl:
 
 *******************************
-Python, R, Mathematica and Perl
+Python and R
 *******************************
 
 .. _python:
@@ -195,15 +195,5 @@ and repeat the ssh tunneling as explained above.
 
 R
 =======
-
-TBA
-
-Mathematica
-===========
-
-TBA
-
-Perl
-======
 
 TBA

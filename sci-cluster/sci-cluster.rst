@@ -1,8 +1,8 @@
 .. _about_scicluster:
 
-============
+================
 About Scicluster
-============
+================
 
  
 .. _linux-cluster:
@@ -19,7 +19,7 @@ Both of these views are fully correct, and it's therefore important to be aware 
 
 
 Rocks Gnu/Linux operating system
-==================================================================
+================================
 
 
 Scicluster is build upon `Rocks <http://www.rocksclusters.org/>`_ cluster distrobution.

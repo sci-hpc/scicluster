@@ -1,7 +1,7 @@
 .. _slurm:
 
 SLURM Workload Manager
-=======================
+======================
 
 `SLURM <https://slurm.schedmd.com/>`_ is the workload manager and job scheduler used for Scicluster.
 
@@ -17,7 +17,7 @@ See :ref:`interactive` for more details.
 .. _slurm_parameter:
 
 SLURM Parameter
------------------
+---------------
 
 `SLURM <https://slurm.schedmd.com/>`_ supports a multitude of different parameters.
 This enables you to effectivly tailor your script to your need when using Scicluster

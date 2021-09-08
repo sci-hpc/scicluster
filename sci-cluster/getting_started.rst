@@ -17,8 +17,8 @@ Connect to Scicluster
 
 You may connect to Scicluster via *SSH* to ``172.21.127.53``.
 This means that on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@172.21.127.53``.
-From Windows, you may connect via PuTTY software. X-forwarding for graphical applications is not possible currently.
-Please see the following link for details to all mentioned methods. :doc:`/account/login`
+From Windows, you may connect via PuTTY software. X-forwarding for graphical applications is also possible.
+Please see the following link for details to all mentioned methods, :doc:`/account/login` .
 
 On nodes and files
 ------------------
@@ -26,14 +26,14 @@ On nodes and files
 When you login, you will be on the frontend node. Please do *not* run any long-lasting programs here.
 The frontend should only be used for job preparation (see below) and simple file operations.
 
-You will also be in your home directory ``/home/username``. Here, you have ... GB at your disposal without backup.
-For actual work, please use the work area at ``/work8/``. It is better to make a directory with your username as
+You will also be in your home directory ``/home/username``. Here, you have ~ 4.5 GB at your disposal with everyday backup.
+For actual work, please use the work area at ``/work8``. It is better to make a directory with your username as
 
 ::
 
  mkdir /work8/username
 
-This space is also not backed up, but it has a good performance and is 8 TB in size. Please remove old files regularly. :doc:`/storage/storage`
+The quota for ``/work8`` is 375 GB. This space is not backed up, but it has a good performance. Please remove old files regularly (see :doc:`/storage/storage`). There are also two high performance storages ``fortitude8`` and ``gratitude8`` that you must contact administrator to apply for.
 
 To move files from your computer to Scicluster or vice versa, you may use any tool that works with *ssh*. On Linux and OSX, these are scp, rsync, or similar programs. On Windows, you may use WinSCP.
 

@@ -25,13 +25,6 @@ or
 
 into a terminal window.
 
-If you need X-forwarding (for instance, if you like to run Emacs in it's own window) you must log in like this:
-
-::
-
- ssh -X -Y <username>@172.21.127.53
-
-
 
 Log in with an ssh key
 ----------------------
@@ -81,3 +74,27 @@ compute-x-y the following way:
 ::
 
     ssh compute-x-y     (for instance: ssh compute-0-1)
+    
+X-forwarding for graphical softwares
+====================================
+
+If you need X-forwarding (for instance, if you like to run Emacs or Mathematica in it's own window) you must log in like this:
+
+::
+
+    ssh -X -Y <username>@172.21.127.53
+ 
+Then you must submit an :ref:`interactive` to get a terminal (this will give you access to the compute nodes such as ``compute-0-0``). Then you nedd to login to the frontend exactly as above and then use ``ssh`` command in another terminal to login to to the node that is allocated for you, ``compute-0-0`` for example.
+
+::
+
+    ssh -Y compute-0-0
+    
+You should be able to run your program in this terminal and after a few seconds (depending to your network connection) the program window should be appeared. To test it you can test xclock. In this terminal type
+
+::
+
+    xclock
+    
+You will see a small clock in your local screen.
+

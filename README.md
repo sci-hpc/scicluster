@@ -4,7 +4,6 @@
 
 Served via https://scicluster.readthedocs.io.
 
-This document is based on [http://hpc.uit.no](https://github.com/uit-no/hpc-doc)
 
 
 ## License

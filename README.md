@@ -1,10 +1,10 @@
 
 
-# Scicluster user documentation
+## What is all this about?
 
-Served via https://scicluster.readthedocs.io.
+SciCluster, also known as Sci-HPC, is another computing cluster which is designed and implemented according to the academic standards, in order to do researches more extensive and qualitative. This being said, it is the first and only academic cumputing cluster in Iran.
 
-
+خوشه دانشکده علوم دانشگاه فردوسی مشهد یک سرویس محاسباتی است با بالاترین کارایی و عملکرد که بر اساس نیازهای آکادمیک، به منظور انجام پژوهش‌های گسترده و اساسی‌تر، پیاده‌سازی شده‌است. با درنظر گرفتن این مهم، سای‌کلاستر اولین و تنها سرویس HPC استاندارد آکادمیک در ایران است.
 
 ## License
 

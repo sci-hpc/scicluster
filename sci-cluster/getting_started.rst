@@ -7,15 +7,17 @@ Getting started
 Here you will find the basics to work with Scicluster.
 Please read the links at the end of each paragraph for more detailed information.
 
+.. _account:
+
 Get an account
 --------------
 
-If you are associated with the Faculty of Science, Ferdowsi University of Mashhad, you may apply locally.
+If you are associated with the Faculty of Science, Ferdowsi University of Mashhad, you may apply locally, otherwise please contact us
 
 Connect to Scicluster
------------------
+---------------------
 
-You may connect to Scicluster via *SSH* to ``172.21.127.53``.
+Please connect to the VPN address provided to you. Then you may connect to Scicluster via *SSH* to ``172.21.127.53``.
 This means that on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@172.21.127.53``.
 From Windows, you may connect via PuTTY software. X-forwarding for graphical applications is also possible.
 Please see the following link for details to all mentioned methods, :doc:`/account/login` .
@@ -52,6 +54,6 @@ You can see the status of your job with ``squeue -u username``. :doc:`/jobs/batc
 Get help
 --------
 
-Do you need help with Scicluster? Write us an email to .... You can also request new software (either an update or entirely new software), suggest changes to this documentation, or send us any other suggestions or issues concerning Scicluster to that email address. Please also read the rest of this documentation.
+Do you need help with Scicluster? Contact us via `our email <scihpc@um.ac.ir>`_ You can also request new software (either an update or entirely new software), suggest changes to this documentation, or send us any other suggestions or issues concerning Scicluster to that email address. Please also read the rest of this documentation.
 
 Happy computing!

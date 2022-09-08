@@ -12,7 +12,7 @@ Please read the links at the end of each paragraph for more detailed information
 Get an account
 --------------
 
-If you are associated with the Faculty of Science, Ferdowsi University of Mashhad, you may apply locally, otherwise please contact us
+If you are associated with the Faculty of Science, Ferdowsi University of Mashhad, you may apply locally, otherwise please `contact us <scihpc@um.ac.ir>`_.
 
 Connect to Scicluster
 ---------------------

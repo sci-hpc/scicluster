@@ -5,10 +5,44 @@ Logging in for the first time
 =============================
 
 
+Connect to the VPN
+==================
+
+Before connecting to the Scicluster login node (currently our frontend node is also the login node), you need to first connect to the VPN. Please do as follow for your preferred OS:
+
+Gnu/Linux and Mac
+-----------------
+
+- install `openfortivpn <https://github.com/adrienverge/openfortivpn#installing>`_ package. For example for ubuntu-based distros:
+
+::
+
+  sudo apt install openfortivpn
+
+- open your editor and input the VPN information provided to you as:
+
+::
+
+    host = 
+    port =
+    username = 
+    password = 
+
+- save the file e.g. in your home as ``my_vpn.conf``.
+
+- run in the terminal:
+
+::
+
+    sudo openfortivpn -c ~/my_vpn.conf
+
+- enter your local (not the cluster) password and connect.
+
+
 Log in with SSH
 ===============
 
-An *SSH* client (Secure SHell) is the required tool to connect to sciscluster.
+An *SSH* client (Secure SHell) is required to connect to sciscluster.
 An *SSH* client provides secure encrypted communications between two hosts over an insecure network.
 
 If you already have *ssh* installed on your UNIX-like system, login may be as easy as typing
@@ -17,7 +51,7 @@ If you already have *ssh* installed on your UNIX-like system, login may be as ea
 
  ssh <username>@sci.local
 
-or
+if you are in the campus or generally
 
 ::
 
@@ -39,7 +73,7 @@ and follow the instructions on the screen. Please use a good passphrase. You wil
 
 ::
 
- ssh-copy-id <username>@sci.local
+ ssh-copy-id <username>@172.21.127.53
 
 To learn more about ssh keys, have a look at `this <https://wiki.archlinux.org/index.php/SSH_keys>`_ page.
 

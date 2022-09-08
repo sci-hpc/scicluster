@@ -39,12 +39,12 @@ Scicluster User guide
 ..   sci-cluster/um-guidelines
 
 
-.. Account section
+.. Login section
 .. toctree::
    :maxdepth: 1
-   :caption: Account
+   :caption: Login
 
-   account/login
+   login/login
 ..   account/accounting
 
 .. Job section

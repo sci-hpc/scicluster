@@ -36,17 +36,25 @@ command::
 How to load a module
 --------------------
 
-In order to make, for instance, the openmpi available, issue the command::
+In order to make, for instance, the openmpi (default version) available, issue the command::
 
-  module load rocks-openmpi
+  module load OpenMPI
 
-This will load the default openmpi version 2.1.1.
+This will load OpenMPI/4.1.1-GCC-10.3.0 and its dependencies. 
  
 
 How to unload a module
 ----------------------
 ::
 
-  module unload rocks-openmpi
+  module unload OpenMPI
+
+Search in available modules
+---------------------------
+
+To search for ``GGG`` modules as an example
+::
+
+  module spider GCC
 
 

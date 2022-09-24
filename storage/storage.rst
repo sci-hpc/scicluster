@@ -21,12 +21,14 @@ This file system is for user home directories on Scicluster. It is not on a sepe
 nodes. If you need more space, consider using ``/work8`` (see below).
 
 The home area is for *permanent* storage only, so please **do not** use it for
-temporary storage during production runs at all. Your quota is ~ 4.5 GB. All jobs using the home area for output while running, may be killed without any warning.
+temporary storage during production runs at all. Your quota space is ~ 4.5 GB. Your quota file number is 12000 files . All jobs using the home area for output while running, may be killed without any warning.
 
 /Work8 area
 ------------------
 
-This file system could be used for writing the output of MPI parallel jobs that run on more than one node. It could also be used for saving your date that are written on local scratch (see below) spaces in each node. The current quotas for each user on ``/work8`` are: 375 GB soft limit and 380 GB hard limit.
+This file system could be used for writing the output of MPI parallel jobs that run on more than one node.
+It could also be used for saving your date that are written on local scratch (see below) spaces in each node.
+The current quotas for each user on ``/work8`` are: 375 GB soft limit and 380 GB hard limit. The quota file number is 45000 files.
 
 /fortitude8 area
 ------------------
@@ -41,4 +43,27 @@ Scratch areas
 
 * In addition, each compute node has a scratch area of 1.2 TB, only locally accessible on each node. This is the area which should be used for serial jobs or parallel jobs that run on just one node. The space is currently accessible as
   ``/state/partition1`` or ``/scratch1`` on each compute node. Scratch spaces are very **high speed** and consist of SAS 10k and 15k disks. Please note that there is no quota limit but all data will be **removed** automatically after **two weeks**.
+
+
+.. _quota:
+
+Quota
+--------------
+
+Your quota is shown below the welcome message each one you login to the frontend. You can also see your quota amount by running:
+
+.. code-block:: bash
+
+  quota -vs
+
+As it is mentioned above, the current quota in Scicluster is:
+
++---------------------+--------+-------------+
+| File System         | Quota  | File limit  |
++=====================+========+=============+
+| /home               | 4.5 GB | 12000       |
++---------------------+--------+-------------+
+| /work8 (/dev/sdb1)  | 450 GB | 45000       |
++---------------------+--------+-------------+
+
 

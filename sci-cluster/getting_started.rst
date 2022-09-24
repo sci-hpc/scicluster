@@ -29,7 +29,7 @@ When you login, you will be on the frontend node. Please do *not* run any long-l
 The frontend should only be used for job preparation (see below) and simple file operations.
 
 You will also be in your home directory ``/home/username``. Here, you have ~ 4.5 GB at your disposal with everyday backup.
-For actual work, please use the work area at ``/work8``. It is better to make a directory with your username as
+For actual work, please use the work area at ``/work8``. It is better to make a directory with your username (if it is not made by admin for you) as
 
 ::
 

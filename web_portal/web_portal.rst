@@ -16,16 +16,16 @@ To login into the portal, you must have already a cluster :ref:`account <account
   :alt: web_portal_welcome_page
 
 
-..
-    Preparing OnDemand Folder
-    -------------------------
 
-    The OnDemand web portal makes a folder in your home directory once you login for the first time and saves its files there. As the home quota is very limited, it is a good practice to move this folder to ``/work8/your_username`` and make a link to this now dislocated ``~/ondemand`` folder. So do
+Preparing OnDemand Folder
+-------------------------
 
-    .. code-block:: bash
+The OnDemand web portal makes a folder in your home directory once you login for the first time and saves its files there. As the home :ref:`quota <quota>` is very limited, it is a good practice to move this folder to ``/work8/your_username`` and make a link to this now dislocated ``~/ondemand`` folder. So do
 
-        cp ~/ondemand /work8/$USER/ondemand
-        ln -sr /work8/$USER/ondemand ~/ondemand
+.. code-block:: bash
+
+  cp ~/ondemand /work8/$USER/ondemand
+  ln -sr /work8/$USER/ondemand ~/ondemand
 
 
 .. note::

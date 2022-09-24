@@ -9,13 +9,23 @@ Version
 -------
 
 Currently we provide two version. The default version is ``GCC-4.8.5 (Red Hat 4.8.5-16)``. 
-We also provide version ``GCC-7.3.0-2.30`` via module system. To enable this version, run
+We also provide ``GCC-7.3``, ``GCC-9.3``, ``GCC-10.2`` and ``GCC-10.3`` at the moment, via module system. To enable 7.3 version as e.g., run
 
-   ml GCCcore/7.3.0
+.. code-block:: bash
+
+  ml GCCcore/7.3.0
    
 To disable,
 
-   ml unload GCCcore/7.3.0.
+.. code-block:: bash
+
+  ml unload GCCcore/7.3.0.
+
+and to see all,
+
+.. code-block:: bash
+  
+  ml spider GCC
 
 
 Fortran compilers

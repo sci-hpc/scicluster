@@ -24,7 +24,7 @@ The OnDemand web portal makes a folder in your home directory once you login for
 
 .. code-block:: bash
 
-  cp ~/ondemand /work8/$USER/ondemand
+  mv ~/ondemand /work8/$USER/ondemand
   ln -sr /work8/$USER/ondemand ~/ondemand
 
 

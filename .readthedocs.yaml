@@ -29,10 +29,10 @@ sphinx:
 #   - requirements: requirements.txt
 #   - method: pip
 #     path: .
-conda:
-  environment: environment.yml
-  path: .
 
+#conda:
+#  environment: environment.yml
+#
 formats:
   - pdf
   - epub

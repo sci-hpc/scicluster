@@ -85,6 +85,7 @@ Scicluster User guide
    software/applications
    software/modules
    software/python_r_perl
+   software/containers
 ..   account/linux
 ..   help/AboutLicenses
 ..   news/new_sw

@@ -33,7 +33,7 @@ Request an Interactive Job with X11 forwarding
 Login to the frontend
 ::
 
-  ssh -Y username@172.21.127.53
+  ssh -Y username@login-node
 
 To run Mathematica interactively, you need to request an interactive session on a compute node. See :doc:`/jobs/interactive`.
 

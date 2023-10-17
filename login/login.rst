@@ -55,9 +55,9 @@ if you are in the campus or generally
 
 ::
 
- ssh <username>@172.21.127.53
+ ssh <username>@login-node 
 
-into a terminal window.
+into a terminal window. Note you must replace `login-node` with the IP provided to you.
 
 
 Log in with an ssh key
@@ -73,7 +73,7 @@ and follow the instructions on the screen. Please use a good passphrase. You wil
 
 ::
 
- ssh-copy-id <username>@172.21.127.53
+ ssh-copy-id <username>@login-node
 
 To learn more about ssh keys, have a look at `this <https://wiki.archlinux.org/index.php/SSH_keys>`_ page.
 
@@ -116,7 +116,7 @@ If you need X-forwarding (for instance, if you like to run Emacs or Mathematica 
 
 ::
 
-    ssh -X -Y <username>@172.21.127.53
+    ssh -X -Y <username>@login-node
  
 Then you must submit an :ref:`interactive` to get a terminal (this will give you access to the compute nodes such as ``compute-0-0``). Then you nedd to login to the frontend exactly as above and then use ``ssh`` command in another terminal to login to to the node that is allocated for you, ``compute-0-0`` for example.
 

@@ -152,7 +152,7 @@ and in our computer (one that we used to connect to the frontend) run
 
 .. code-block:: bash
 
-  ssh -NL 8888:localhost:8888 your_username@172.21.127.53
+  ssh -NL 8888:localhost:8888 your_username@login-node
 
 Finally we go to the address where the jupyter is running in our web browser, e.g.
 

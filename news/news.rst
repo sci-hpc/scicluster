@@ -15,7 +15,7 @@ System status and activity
 --------------------------
 
 You can get a quick overview of the system load on Scicluster on the
-`ganglia page <172.21.127.53/ganglia>`_
+`ganglia page <login-node/ganglia>`_
 (only visible from within the Faculty).
 
 

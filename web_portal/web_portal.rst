@@ -9,7 +9,7 @@ In :ref:`Scicluster <about_scicluster>` we provide a nice web portal using `OnDe
 Logging in
 ----------
 
-To login into the portal, you must have already a cluster :ref:`account <account>`. Please connect to the VPN address provided to you, then go to this address in your web browser `<https://172.21.127.53:8181/>`_ . You may face with a potential security warning. This is because we do not get a registered certificate. This is not important and you could go one. After this part, you should be able to see the welcome page
+To login into the portal, you must have already a cluster :ref:`account <account>`. Please connect to the VPN address provided to you, then go to this address in your web browser `<https://login-node>`_ . You may face with a potential security warning. This is because we do not get a registered certificate. This is not important and you could go one. After this part, you should be able to see the welcome page
 
 .. image:: images/web_portal_welcome_page.png
   :width: 800
@@ -30,7 +30,7 @@ The OnDemand web portal makes a folder in your home directory once you login for
 
 .. note::
    If you have problem with the portal, first try to log out and login again.
-   Next, try to clear all cookies for the domain `172.21.127.53`.
+   Next, try to clear all cookies for the domain `login-node`.
    Finally, try the `Help > Restart Web Server` link to restart the portal.
     
 

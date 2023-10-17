@@ -27,7 +27,8 @@ sphinx:
 python:
    install:
    - requirements: requirements.in
-
+   - method: pip
+     path: .
 formats:
   - pdf
   - epub

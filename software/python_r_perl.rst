@@ -73,7 +73,7 @@ of the users home
 
 .. code-block:: bash
 
-  conda create --prefix /work8/your_username/envs --name myproject python=3 matplotlib numpy
+  conda create --prefix /work8/your_username/envs/myproject python=3 matplotlib numpy
   
 
 Daily usage

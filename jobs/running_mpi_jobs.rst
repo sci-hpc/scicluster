@@ -7,10 +7,9 @@ To run MPI job, you should load OpenMPI module as an e.g.::
 
    $ module load OpenMPI/3.1.1-GCC-7.3.0-2.30
 
-This will load, OpenMPI version 3.1.1 which is compiled with gcc 7.3.0-2.30. We will compile and install other versions if you need any other.
+This load, OpenMPI version 3.1.1 which is compiled with gcc 7.3.0-2.30 and define the environment variable ``OMPI_MCA_btl=self,vader,tcp``.
+. We will compile and install other versions if you need any other.
    
-This will define environment variable ``OMPI_MCA_btl=self,vader,tcp``.
-
 
 There are several ways of launching an MPI application within a SLURM
 allocation, e.g. ``srun``, ``mpirun``, ``mpiexec``.

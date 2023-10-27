@@ -10,8 +10,8 @@ You can run an interactive job like this::
   $ srun -p short --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty bash -i
 
 Here we ask for a single core on one interactive node for one hour with the
-default amount of memory. The command prompt will appear as soon as
-the job starts.
+default amount of memory in the short partition. The command prompt will appear as soon as
+the job starts. You can add other options same as when you prepare a bath script like ``--mem``, ``-p``, ``-w`` and etc.
 
 Exit the bash shell to end the job. If you exceed the time or memory
 limits the job will also abort.
@@ -33,5 +33,18 @@ internet connection problems.
     As an example do::
 ..
     $ interactive -c1 -w compute-0-0 -p short
+
+X11 forwarding for running programs with GUI
+--------------------------------------------
+As our current slurm version does not forward X11 correctly, you can use `srun.x11` command for interactive jobs which need to forward X11 as::
+
+  $ srun.x11 -p short --nodes=1 --ntasks-per-node=1 --time=01:00:00 --mem=1GB
+
+To test run the simple ``xclock`` program in the terminal session provided to you.
+
+You can use slurm option according to your needs as above. Plese note for proper forwarding of X11, you should login to the
+login node with ``-Y -X`` arguments. See :ref:`login` for more info.
+
+
 
 

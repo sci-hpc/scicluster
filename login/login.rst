@@ -57,7 +57,7 @@ into a terminal window. Note you must replace `login-node` with the IP provided 
 Log in with an ssh key
 ----------------------
 
-To avoid entering your password every time you login and to increase security, you can log in with an ssh keypair. This keypair consists of a private key that you have to store on your computer and a public key that you can store on sciscluster. On Linux or OSX simply type:
+To avoid entering your password every time you log in and to increase security, you can log in with an ssh keypair. This keypair consists of a private key that you have to store on your computer and a public key that you can store on sciscluster. On Linux or OSX simply type:
 
 ::
 
@@ -89,12 +89,12 @@ To learn more about using SSH, please also consult the `OpenSSH page <https://ww
 
 
 
-Logging on the compute nodes
-============================
+Logging in to the compute nodes
+===============================
 
-Information on how to log in on a compute node.
+Information on how to log in to a compute node.
 
-Some times you may want to log on a compute node (for instance to check
+Some times you may want to log in to a compute node (for instance to check
 out output files on the local work area on the node), and this is also
 done by using SSH. From ``sci.local`` you can log in to
 compute-x-y the following way:
@@ -106,23 +106,17 @@ compute-x-y the following way:
 X-forwarding for graphical softwares
 ====================================
 
-If you need X-forwarding (for instance, if you like to run Emacs or Mathematica in it's own window) you must log in like this:
+If you need `X-forwarding  <https://en.wikipedia.org/wiki/X_Window_System>`_ (for instance, if you like to run Mathematica in it's own window) you must log in like this:
 
 ::
 
     ssh -X -Y username@login-node
  
-Then you must submit an :ref:`interactive` to get a terminal (this will give you access to the compute nodes such as ``compute-0-0``). Then you nedd to login to the frontend exactly as above and then use ``ssh`` command in another terminal to login to to the node that is allocated for you, ``compute-0-0`` for example.
-
-::
-
-    ssh -Y compute-0-0
-    
-You should be able to run your program in this terminal and after a few seconds (depending to your network connection) the program window should be appeared. To test it you can test xclock. In this terminal type
+Then you must submit an :ref:`x11interactive` to get a terminal (this will give you access to the compute nodes such as ``compute-0-0``). You should be able to run your program in this terminal and after a few seconds (depending to your network connection) the program window should be appeared. To test it you can test xclock. In this terminal type
 
 ::
 
     xclock
     
-You will see a small clock in your local screen.
+If a small clock appears on your local screen, everything is OK.
 

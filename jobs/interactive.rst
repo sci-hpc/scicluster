@@ -34,16 +34,17 @@ internet connection problems.
 ..
     $ interactive -c1 -w compute-0-0 -p short
 
-X11 forwarding for running programs with GUI
---------------------------------------------
-As our current slurm version does not forward X11 correctly, you can use `srun.x11` command for interactive jobs which need to forward X11 as::
+.. _x11interactive:
+
+X11 enabled interactive job
+---------------------------
+As our current slurm ``srun`` command does not forward X11 automatically, you can use ``srun.x11`` command for those interactive jobs which need to forward X11. For example::
 
   $ srun.x11 -p short --nodes=1 --ntasks-per-node=1 --time=01:00:00 --mem=1GB
 
 To test run the simple ``xclock`` program in the terminal session provided to you.
 
-You can use slurm option according to your needs as above. Plese note for proper forwarding of X11, you should login to the
-login node with ``-Y -X`` arguments. See :ref:`login` for more info.
+Like the ``sun`` command, you can use slurm option according to your needs. Please note for proper forwarding of X11 to your local computer, you had to log in to the login node with ``-Y -X`` arguments. See :ref:`login` for more info.
 
 
 

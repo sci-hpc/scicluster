@@ -20,7 +20,7 @@ the run. This includes run time, memory used, etc.
 From our monitoring tool Ganglia, you can watch live status information
 on Scicluster:
 
-*  `Load situation <172.21.127.53/ganglia/>`_
+*  `Load situation <login-node/ganglia/>`_
 
 
 CPU load and memory consumption of your job

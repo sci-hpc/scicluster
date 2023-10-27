@@ -4,10 +4,6 @@ Scicluster User guide
 ===================================
 
 
-.. raw:: html
-
-
-
 :ref:`Scicluster <about_scicluster>` is the local computer cluster of Faculty of Science of Ferdowsi University of Mashhad, constructed and maintained by SCI-HPC group. If you are new here, you might want to learn the basics first here:
 
 
@@ -58,7 +54,7 @@ Scicluster User guide
 .. toctree::
    :maxdepth: 2
 
-   jobs/slurm_parameter
+   jobs/slurm
 
 .. toctree::
    :maxdepth: 1

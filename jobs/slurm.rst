@@ -1,5 +1,3 @@
-.. _slurm:
-
 SLURM Workload Manager
 ======================
 
@@ -14,7 +12,7 @@ You immediately see the results and can check if all parts behave as you expecte
 See :ref:`interactive` for more details.
 
 
-.. _slurm_parameter:
+.. _slurmparameter:
 
 SLURM Parameter
 ---------------
@@ -104,7 +102,6 @@ On the other hand you have an non-MPI enables application or made a mistake in
 your setup, it doesn't make sense to request more than one node.
 
 
-.. _slurm_recommendations:
 
 Settings for OpenMP and MPI jobs
 --------------------------------

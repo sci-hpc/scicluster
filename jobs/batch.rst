@@ -32,7 +32,7 @@ It is sometimes convenient if you do not have to edit the job script every time 
 to change the input file. Or perhaps you want to submit hundreds of jobs and
 loop over a range of input files. For this it is handy to pass command-line
 parameters to the job script.
-For an overview of the different possible parameters, see :ref:`slurm_parameter`.
+For an overview of the different possible parameters, see :ref:`slurmparameter`.
 
 In SLURM you can do this::
 
@@ -49,8 +49,6 @@ And then you can pick the parameters up inside the job script using ``${n}`` whe
   # argument 1 is myinput
   # argument 2 is myoutput
   mybinary.x < ${1} > ${2}
-
-For recommended sets of parameters see also :ref:`slurm_recommendations`.
 
 
 Priority
